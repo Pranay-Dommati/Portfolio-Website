@@ -1,0 +1,6 @@
+This favicon was generated using the following font:
+
+- Font Title: Trocchi
+- Font Author: Copyright 2012 The Trocchi Project Authors (https://github.com/m4rc1e/Trocchi)
+- Font Source: https://fonts.gstatic.com/s/trocchi/v17/qWcqB6WkuIDxDZLcDrtUvMeTYD0.ttf
+- Font License: SIL Open Font License, 1.1 (http://scripts.sil.org/OFL))

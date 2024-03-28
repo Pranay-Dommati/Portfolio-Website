@@ -1,0 +1,256 @@
+.cutting-line {
+    border: none;
+    height: 1px;
+    background-color: black;
+    width: 80%; /* Adjust width as needed */
+    margin: 0 auto; /* Center the line */
+    position: relative;
+}
+
+.cutting-line::before,
+.cutting-line::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 10px; /* Adjust the cutting width */
+    height: 1px; /* Same as the line's height */
+    background-color: inherit;
+}
+
+.cutting-line::before {
+    left: calc(-10px / 2); /* Half of the cutting width */
+}
+
+.cutting-line::after {
+    right: calc(-10px / 2); /* Half of the cutting width */
+}
+
+.text-color{
+    color: #F7418F;
+    font-size: 20px;
+
+}
+
+
+.heroes-section{
+ background-color: #FEC7B4;
+ border-radius: 22px;
+}
+
+.heroes-outer-sec{
+  background-color: #FC819E;
+}
+
+.display-5.fw-bold.text-body-emphasis {
+    color:pink;
+}
+
+.img-fluid {
+    background-color: transparent; /* Set background color of image to transparent */ /* Adjust border-radius to create smooth edges */
+    padding: 10px;
+    border-radius: 22px; /
+
+        /* Add padding to create space between image and background */
+}
+
+
+ @keyframes fly {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(-200px) rotate(-45deg); opacity: 0; }
+        }
+
+        /* Add the heart styles */
+       .heart {
+    position: absolute;
+    width: 40px; /* Increase the width to make the heart larger */
+    height: 40px; /* Increase the height to make the heart larger */
+    font-size: 40px; /* Increase the font size to scale the heart */
+    color: pink; /* Change the color to pink */
+    z-index: 1000;
+    animation: fly 3s ease-out;
+}
+
+.about-me-sec{
+    background-color: #FEC7B4;
+}
+
+.about-me-sec-head {
+            font-weight: 385;
+            text-decoration: underline;
+            text-decoration-thickness: 2px;
+            text-underline-offset: 3px;
+            font-size: 48px;
+            margin-bottom: 4rem;
+            font-style:italic;
+            color:#f73972/* Add margin-bottom as needed */
+        }
+
+.about-me-sec-body {
+     color: #f73972/* Change the font family to your desired font */
+    /* Add any other font styles you want */
+}
+
+ @keyframes rocketAnimation {
+            0% {
+                transform: translate(-0%, 1180%); /* Start from bottom left */
+            }
+            100% {
+                transform: translate(1800%, -100%); /* End at top right */
+            }
+        }
+
+        /* Apply animation to the rocket */
+        .rocket {
+            animation: rocketAnimation 4s linear infinite; /* Adjust animation duration */
+        }
+
+        /* Adjust rocket size */
+        .rocket svg {
+            width: 10px; /* Adjust width */
+            height: 8px; /* Adjust height */
+        }
+
+ @keyframes settleDown {
+            0% {
+                transform: translateY(-50px); /* Initial position */
+                opacity: 0; /* Initial opacity */
+            }
+            100% {
+                transform: translateY(0); /* Final position */
+                opacity: 1; /* Final opacity */
+            }
+        }
+
+        /* Define a class to trigger the settleDown animation */
+        .settle-animate {
+            animation: settleDown 0.5s ease-out; /* Animation properties */
+        }
+
+
+.palanquin-thin {
+  font-family: "Palanquin", sans-serif;
+  font-weight: 100;
+  font-style: normal;
+}
+
+.palanquin-extralight {
+  font-family: "Palanquin", sans-serif;
+  font-weight: 200;
+  font-style: normal;
+}
+
+.palanquin-light {
+  font-family: "Palanquin", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.palanquin-regular {
+  font-family: "Palanquin", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.palanquin-medium {
+  font-family: "Palanquin", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.palanquin-semibold {
+  font-family: "Palanquin", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.palanquin-bold {
+  font-family: "Palanquin", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.bellota-regular {
+  font-family: "Bellota", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.tt-block {
+    background-color:#FC819E;
+    color:#393232
+}
+
+ul.custom-list {
+  list-style-type: circle;
+    font-style:italic/* Change color of the arrow */
+}
+
+.emoji-background {
+    position: relative;
+}
+
+.tools-heading::before {
+    content: '🛠️';
+    display: inline-block;
+    font-size: 40px;
+    margin-right: 10px; /* Adjust margin to increase space between emoji and text */
+    filter: brightness(75%); /* Adjust brightness to make the emoji darker */
+}
+
+.projects-sec{
+    background-color: #F7418F
+}
+
+
+
+.stars-bg {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 550px; /* Set a fixed height for the container, adjust as needed */
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.stars-bg::before {
+    content: '';
+    position: absolute;
+    top: -100%;
+    left: 0;
+    width: 500%;
+    height: 200%;
+    background-image: url('twitter-svg.png'); /* Replace 'twitter-svg.png' with your image file */
+    animation: stars-flying 30s linear infinite;
+    z-index: -1; /* Ensure the stars background is behind other content */
+}
+
+@keyframes stars-flying {
+    0% {
+        transform: translateY(-100%);
+    }
+    100% {
+        transform: translateY(100%);
+    }
+}
+
+
+
+ @keyframes slideInFromLeft {
+            from { opacity: 0; transform: translateX(-50px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+        /* Apply animation class when element comes into view */
+        .slide-in {
+            animation: slideInFromLeft 0.5s ease-in-out forwards;
+        }
+        /* Additional styling */
+        .element {
+            opacity: 0; /* Initially hide the element */
+            transition: opacity 0.5s ease-in-out;
+        }
+
+
+
+
+

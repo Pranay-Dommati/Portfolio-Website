@@ -1,0 +1,155 @@
+<div style="background-color:#FEC7B4">
+  <div class="container">
+    <footer class="py-5 mt-5" style="font-weight:440">
+      <ul class="nav justify-content-center pb-3 mb-3" style="font-size:17.5px; border-bottom: 0.1px solid black;">
+        <li class="nav-item"><a href="#navbar" class="nav-link px-2 text-body-secondary">Home</a></li>
+        <li class="nav-item"><a href="#projects" class="nav-link px-2 text-body-secondary">My Projects</a></li>
+        <li class="nav-item"><a href="#about-me" class="nav-link px-2 text-body-secondary">About Me</a></li>
+        <li class="nav-item"><a href="{{ url_for('contact_me') }}" class="nav-link px-2 text-body-secondary">Get in Touch</a></li>
+      </ul>
+      <!-- Social media icons -->
+      <div class="d-flex justify-content-center align-items-center my-4">
+        <a href="https://www.instagram.com/mr.bunny_dommati/"><img src="{{ url_for('static', filename='svgs/instagram-svg.svg') }}" alt="Instagram" style="width:35px;height:35px"></a>
+        <a href="https://twitter.com/DommatiB31474"><img src="{{ url_for('static',filename='svgs/twitter-svg.png') }}" alt="Twitter" style="width:25px; height:25px" class="mx-3"></a>
+          <a href="https://www.facebook.com/banny.dommati/"><img src="{{ url_for('static', filename='svgs/facebook-svg.svg') }}" alt="Facebook" style="width:35px;height:35px"></a>
+          <a href="https://github.com/Pranay-Dommati    "><img src="{{ url_for('static', filename='svgs/github.png') }}" alt="Github" style="width:30px;height:31px" class="mx-3"></a>
+        <!-- Add more social media icons here if needed -->
+      </div>
+      <!-- Copyright text -->
+      <p class="text-center text-body-secondary">&copy; {{ current_year }} Handcrafted by Me</p>
+    </footer>
+  </div>
+</div>
+
+
+
+<script>
+     document.addEventListener("DOMContentLoaded", function() {
+            // Add a scroll event listener
+            window.addEventListener("scroll", function() {
+                // Calculate the scroll position
+                var scrollPosition = window.scrollY;
+
+                // Get the element you want to animate
+                var elementToAnimate = document.querySelector(".element-to-animate");
+
+                // Check if the element is in the viewport
+                var elementPosition = elementToAnimate.getBoundingClientRect().top;
+
+                // Add an animation class when the element is in the viewport
+                if (elementPosition < window.innerHeight) {
+                    elementToAnimate.classList.add("settle-animate");
+                }
+            });
+        });
+
+
+
+       document.addEventListener("DOMContentLoaded", function() {
+    const image = document.querySelector(".img-fluid");
+
+    image.addEventListener("mouseover", function(event) {
+        const heart = document.createElement("div");
+        heart.classList.add("heart");
+        heart.innerHTML = "&#x1F497;"; // Pink heart emoji code
+        heart.style.left = event.clientX + "px";
+        heart.style.top = event.clientY + "px";
+        document.body.appendChild(heart);
+
+        setTimeout(function() {
+            heart.remove();
+        }, 2000);
+    });
+});
+    </script>
+
+<script>
+        // Function to check if an element is in the viewport
+        function isInViewport(element) {
+            var rect = element.getBoundingClientRect();
+            return (
+                rect.top >= 0 &&
+                rect.left >= 0 &&
+                rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+                rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+            );
+        }
+
+        // Function to handle scroll event
+        function handleScroll() {
+            // Select elements to animate
+            var elements = document.querySelectorAll('.element');
+
+            // Loop through elements and check if they are in the viewport
+            elements.forEach(function(element) {
+                if (isInViewport(element)) {
+                    // If element is in viewport, add animation class
+                    element.classList.add('slide-in');
+                }
+            });
+        }
+
+        // Add scroll event listener
+        window.addEventListener('scroll', handleScroll);
+
+        // Initial check on page load
+        handleScroll();
+    </script>
+
+
+<script>
+    // Function to check if the top of an element is in the viewport
+function isTopInViewport(element) {
+    var rect = element.getBoundingClientRect();
+    return rect.top <= window.innerHeight && rect.top >= 0;
+}
+
+// Function to handle scroll event
+function handleScroll() {
+    // Select the image element to animate
+    var image = document.querySelector('.image');
+
+    // Check if the top of the image is in the viewport
+    if (isTopInViewport(image)) {
+        // If the top of the image is in the viewport, add the animation class
+        image.classList.add('slide-in');
+    }
+}
+
+// Add scroll event listener
+window.addEventListener('scroll', handleScroll);
+
+// Initial check on page load
+handleScroll();
+
+</script>
+
+
+
+
+
+<script>
+    document.getElementById("contactForm").addEventListener("submit", function(event) {
+        var form = this;
+        // Display "Sent" message with bold text and centered
+        var submissionResult = document.getElementById("submissionResult");
+        submissionResult.innerHTML = '<div style="text-align: center; font-weight: bold; color: green;">Sent..</div>';
+        // Remove the message after 4 seconds
+        setTimeout(function() {
+            submissionResult.innerHTML = "";
+        }, 5000);
+        // Reset form after 4 seconds
+        setTimeout(function() {
+            form.reset();
+        }, 5000);
+    });
+</script>
+
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+
+
+
+</body>
+</html>
