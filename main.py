@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, flash
 import datetime
 import smtplib
 import os
@@ -12,11 +12,16 @@ app.config['SECRET_KEY'] = os.environ.get('secret_key')
 
 
 def send_email(name, email, message):
-    email_message = f"Subject:New Message from Portfolio website\n\nName: {name}\nEmail: {email}\nMessage:{message}"
-    with smtplib.SMTP("smtp.gmail.com") as connection:
-        connection.starttls()
-        connection.login(my_mail, password)
-        connection.sendmail(email, my_mail, email_message)
+    try:
+        email_message = f"Subject: New Message from Portfolio website\n\nName: {name}\nEmail: {email}\nMessage: {message}"
+        with smtplib.SMTP("smtp.gmail.com", 587) as connection:
+            connection.starttls()
+            connection.login(my_mail, password)
+            connection.sendmail(my_mail, my_mail, email_message)
+        flash('Your message has been sent successfully!', 'success')
+    except Exception as e:
+        flash('An error occurred while sending your message. Please try again later.', 'error')
+        app.logger.error(f"Error sending email: {str(e)}")
 
 
 @app.route('/')
@@ -36,3 +41,4 @@ def contact_me():
 
 if __name__ == '__main__':
     app.run(debug=True)
+
